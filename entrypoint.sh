@@ -2,4 +2,7 @@
 
 set -e
 
-echo "::set-output name=output::Hello"
+echo "HELLO WORLD" >> $GITHUB_OUTPUT
+
+# find . -name "*.fish" -print0 | xargs -0 fish_indent --check
+# fish_indent config/common/.config/fish/config.fish | diff -u config/common/.config/fish/config.fish -
