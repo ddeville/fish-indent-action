@@ -1,4 +1,4 @@
-FROM alpine3.17
+FROM alpine:latest
 
 RUN apk --no-cache add bash fish
 
