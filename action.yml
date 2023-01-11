@@ -1,0 +1,11 @@
+name: "Fish Indent"
+description: "Run fish_indent to format fish config files"
+runs:
+  using: "docker"
+  image: "Dockerfile"
+branding:
+  icon: "lock"
+  color: "gray-dark"
+outputs:
+  output:
+    description: "fish_indent results"
