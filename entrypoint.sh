@@ -9,14 +9,11 @@ while IFS= read -r path; do
   if [ -n "$path" ]; then
     df=$(fish_indent "$path" | diff -u "$path" -)
     >&2 echo "$df"
-    # echo "::set-output name=output::$df"
-    # echo "output=$df" >> $GITHUB_OUTPUT
     ((count++))
   fi
 done <<< "$errors"
 
 # Third, return an error if any file had errors
 if [ "$count" -gt 0 ]; then
-  echo "fish_indent failed"
   exit 1
 fi
