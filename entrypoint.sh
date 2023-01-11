@@ -8,7 +8,8 @@ count=0
 while IFS= read -r path; do
   if [ -n "$path" ]; then
     df=$(fish_indent "$path" | diff -u "$path" -)
-    echo "error=$df" >>"$GITHUB_OUTPUT"
+    # echo "error=$df" >>"$GITHUB_OUTPUT"
+    echo "::set-output name=output::$df"
     ((count++))
   fi
 done <<< "$errors"
